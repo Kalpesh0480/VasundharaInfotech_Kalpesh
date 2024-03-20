@@ -46,4 +46,16 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
             emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
         }
     }
+
+    // get all  Data
+
+    fun getAllData() = liveData(Dispatchers.IO) {
+        emit(Resource.loading(data = null))
+        try {
+            emit(Resource.success(data = mainRepository.getAllData()))
+
+        } catch (exception: Exception) {
+            emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
+        }
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.vasundharainfotech.retrofit
 
 import com.example.vasundharainfotech.model.ComputerDetails
+import com.example.vasundharainfotech.model.GetDataDetails
 import retrofit2.Response
 
 
@@ -11,7 +12,12 @@ interface  ApiService {
     @GET("/json/")
     suspend fun getUsers(): Response<ComputerDetails>
 
-   // suspend fun getAllMovies() : Response<List<Movie>>
+    @GET("com.hd.camera.apps.high.quality")
+    suspend fun getAllData() : Response<GetDataDetails>
+
+
+
+
 
 
 
